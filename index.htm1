@@ -1,0 +1,61 @@
+‏<!DOCTYPE html>
+‏<html lang="ar">
+‏<head>
+‏<meta charset="UTF-8">
+‏<meta name="viewport" content="width=device-width, initial-scale=1.0">
+‏<title>NMAT cafe – Menu</title>
+‏<style>
+‏body {
+‏  font-family: Arial, sans-serif;
+‏  background: #f7f2dc;
+‏  color: #222;
+‏  margin: 0;
+‏  padding: 20px;
+}
+‏.container {
+‏  max-width: 600px;
+‏  margin: auto;
+}
+‏h1 {
+‏  text-align: center;
+}
+‏.item {
+‏  display: flex;
+‏  justify-content: space-between;
+‏  border-bottom: 1px dashed #ccc;
+‏  padding: 10px 0;
+}
+‏.footer {
+‏  text-align: center;
+‏  margin-top: 30px;
+}
+‏.whatsapp {
+‏  display: inline-block;
+‏  margin-top: 15px;
+‏  padding: 12px 20px;
+‏  background: #25D366;
+‏  color: #fff;
+‏  text-decoration: none;
+‏  border-radius: 25px;
+}
+‏</style>
+‏</head>
+
+‏<body>
+‏<div class="container">
+‏  <h1>🍰 الحلويات</h1>
+
+‏  <div class="item"><span>كوكيز</span><span>5.50 ﷼</span></div>
+‏  <div class="item"><span>كوكيز بودينق</span><span>10.50 ﷼</span></div>
+‏  <div class="item"><span>دولسي بيكان</span><span>17.50 ﷼</span></div>
+‏  <div class="item"><span>ليموبيري كرامبل</span><span>17.50 ﷼</span></div>
+
+‏  <div class="footer">
+‏    <p>⏰ أوقات العمل: 24 ساعة</p>
+‏    <a class="whatsapp" href="https://wa.me/966532212529" target="_blank">
+      اطلب عبر واتساب
+‏    </a>
+‏  </div>
+‏</div>
+‏</body>
+‏</html>
