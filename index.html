@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NMAT Cafe - Menu</title>
+<title>NMAT Cafe</title>
 
 <style>
 body{
@@ -11,13 +11,12 @@ margin:0;
 font-family:system-ui,-apple-system,BlinkMacSystemFont;
 background:#f6f1df;
 color:#111;
-padding-bottom:170px
+padding-bottom:200px
 }
 header{
 text-align:center;
-padding:30px 20px
+padding:25px
 }
-h1{margin:0;font-size:32px}
 section{
 max-width:420px;
 margin:auto
@@ -29,22 +28,16 @@ padding:14px;
 border-radius:12px;
 box-shadow:0 4px 10px rgba(0,0,0,.05)
 }
-.item h3{margin:0 0 5px}
-.item small{color:#666}
-.controls{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-top:10px
-}
-.controls button{
-width:32px;
-height:32px;
+.item h3{margin:0}
+small{color:#666}
+.options button{
+margin:4px;
+padding:8px 12px;
 border:none;
+border-radius:6px;
 background:#111;
 color:#fff;
-border-radius:50%;
-font-size:18px
+font-size:14px
 }
 .cart{
 position:fixed;
@@ -78,6 +71,7 @@ border-radius:8px
 <header>
 <h1>NMAT cafe</h1>
 <p>📍 تبوك – توصيل للسيارة – 24 ساعة</p>
+<p>📞 0532212529</p>
 </header>
 
 <section>
@@ -86,183 +80,68 @@ border-radius:8px
 
 <div class="item">
 <h3>قهوة اليوم</h3>
-<small>8.50 ﷼ • 3 كال</small>
-<div class="controls">
-<span id="q1">0</span>
-<div>
-<button onclick="add('قهوة اليوم',8.5,3,'q1')">+</button>
-<button onclick="remove('قهوة اليوم',8.5,3,'q1')">−</button>
-</div>
+<small>Hot / Iced</small>
+<div class="options">
+<button onclick="add('قهوة اليوم (حار)',0)">حار</button>
+<button onclick="add('قهوة اليوم (بارد)',0)">بارد</button>
 </div>
 </div>
 
 <div class="item">
-<h3>V60</h3>
-<small>6.50 ﷼ • 3 كال</small>
-<div class="controls">
-<span id="q2">0</span>
-<div>
-<button onclick="add('V60',6.5,3,'q2')">+</button>
-<button onclick="remove('V60',6.5,3,'q2')">−</button>
-</div>
-</div>
-</div>
-
-<div class="item">
-<h3>كرددية</h3>
-<small>9.50 ﷼ • 4 كال</small>
-<div class="controls">
-<span id="q3">0</span>
-<div>
-<button onclick="add('كرددية',9.5,4,'q3')">+</button>
-<button onclick="remove('كرددية',9.5,4,'q3')">−</button>
-</div>
+<h3>V60 إثيوبي</h3>
+<small>9.50 ﷼ • Calories 3</small>
+<div class="options">
+<button onclick="add('V60 إثيوبي (حار)',9.5)">حار</button>
+<button onclick="add('V60 إثيوبي (بارد)',9.5)">بارد</button>
 </div>
 </div>
 
 <div class="item">
 <h3>ماتشا</h3>
-<small>13.50 ﷼ • 70 كال</small>
-<div class="controls">
-<span id="q4">0</span>
-<div>
-<button onclick="add('ماتشا',13.5,70,'q4')">+</button>
-<button onclick="remove('ماتشا',13.5,70,'q4')">−</button>
+<small>اختر النكهة والحجم</small>
+<div class="options">
+<button onclick="add('ماتشا فراولة (صغير)',13.5)">فراولة صغير – 13.50</button>
+<button onclick="add('ماتشا فراولة (كبير)',19.5)">فراولة كبير – 19.50</button>
+
+<button onclick="add('ماتشا لاتيه (صغير)',13.5)">لاتيه صغير – 13.50</button>
+<button onclick="add('ماتشا لاتيه (كبير)',19.5)">لاتيه كبير – 19.50</button>
+
+<button onclick="add('ماتشا فانيلا (صغير)',13.5)">فانيلا صغير – 13.50</button>
+<button onclick="add('ماتشا فانيلا (كبير)',19.5)">فانيلا كبير – 19.50</button>
 </div>
+</div>
+
+<h2>🍰 الحلويات المتوفرة</h2>
+
+<div class="item">
+<h3>كوكيز شوكولاتة</h3>
+<small>5.50 ﷼ • Calories 150</small>
+<div class="options">
+<button onclick="add('كوكيز شوكولاتة',5.5)">إضافة</button>
 </div>
 </div>
 
 <div class="item">
-<h3>ماتشا لوز</h3>
-<small>13.50 ﷼ • 85 كال</small>
-<div class="controls">
-<span id="q5">0</span>
-<div>
-<button onclick="add('ماتشا لوز',13.5,85,'q5')">+</button>
-<button onclick="remove('ماتشا لوز',13.5,85,'q5')">−</button>
-</div>
+<h3>دولسي بيكان</h3>
+<small>17.50 ﷼ • Calories 320</small>
+<div class="options">
+<button onclick="add('دولسي بيكان',17.5)">إضافة</button>
 </div>
 </div>
 
 <div class="item">
-<h3>ماتشا فراولة</h3>
-<small>13.50 ﷼ • 75 كال</small>
-<div class="controls">
-<span id="q6">0</span>
-<div>
-<button onclick="add('ماتشا فراولة',13.5,75,'q6')">+</button>
-<button onclick="remove('ماتشا فراولة',13.5,75,'q6')">−</button>
-</div>
+<h3>ليموبيري</h3>
+<small>17.50 ﷼ • Calories 310</small>
+<div class="options">
+<button onclick="add('ليموبيري',17.5)">إضافة</button>
 </div>
 </div>
 
 <div class="item">
-<h3>هيتو نمت</h3>
-<small>10.50 ﷼ • 250 كال</small>
-<div class="controls">
-<span id="q7">0</span>
-<div>
-<button onclick="add('هيتو نمت',10.5,250,'q7')">+</button>
-<button onclick="remove('هيتو نمت',10.5,250,'q7')">−</button>
-</div>
-</div>
-</div>
-
-<div class="item">
-<h3>ماء</h3>
-<small>1 ﷼ • 0 كال</small>
-<div class="controls">
-<span id="q8">0</span>
-<div>
-<button onclick="add('ماء',1,0,'q8')">+</button>
-<button onclick="remove('ماء',1,0,'q8')">−</button>
-</div>
-</div>
-</div>
-
-<h2>🍰 الحلويات</h2>
-
-<div class="item">
-<h3>ترافل مانجو</h3>
-<small>14.50 ﷼ • 280 كال</small>
-<div class="controls">
-<span id="q9">0</span>
-<div>
-<button onclick="add('ترافل مانجو',14.5,280,'q9')">+</button>
-<button onclick="remove('ترافل مانجو',14.5,280,'q9')">−</button>
-</div>
-</div>
-</div>
-
-<div class="item">
-<h3>كيكة نمت</h3>
-<small>19.50 ﷼ • 335 كال</small>
-<div class="controls">
-<span id="q10">0</span>
-<div>
-<button onclick="add('كيكة نمت',19.5,335,'q10')">+</button>
-<button onclick="remove('كيكة نمت',19.5,335,'q10')">−</button>
-</div>
-</div>
-</div>
-
-<div class="item">
-<h3>كيكة توت بري</h3>
-<small>14.50 ﷼ • 290 كال</small>
-<div class="controls">
-<span id="q11">0</span>
-<div>
-<button onclick="add('كيكة توت بري',14.5,290,'q11')">+</button>
-<button onclick="remove('كيكة توت بري',14.5,290,'q11')">−</button>
-</div>
-</div>
-</div>
-
-<div class="item">
-<h3>كيكة كوكنت توت</h3>
-<small>14.50 ﷼ • 300 كال</small>
-<div class="controls">
-<span id="q12">0</span>
-<div>
-<button onclick="add('كيكة كوكنت توت',14.5,300,'q12')">+</button>
-<button onclick="remove('كيكة كوكنت توت',14.5,300,'q12')">−</button>
-</div>
-</div>
-</div>
-
-<div class="item">
-<h3>تراميسو</h3>
-<small>11.50 ﷼ • 330 كال</small>
-<div class="controls">
-<span id="q13">0</span>
-<div>
-<button onclick="add('تراميسو',11.5,330,'q13')">+</button>
-<button onclick="remove('تراميسو',11.5,330,'q13')">−</button>
-</div>
-</div>
-</div>
-
-<div class="item">
-<h3>كوكيز</h3>
-<small>5.50 ﷼ • 150 كال</small>
-<div class="controls">
-<span id="q14">0</span>
-<div>
-<button onclick="add('كوكيز',5.5,150,'q14')">+</button>
-<button onclick="remove('كوكيز',5.5,150,'q14')">−</button>
-</div>
-</div>
-</div>
-
-<div class="item">
-<h3>كوكيز بودينق</h3>
-<small>10.50 ﷼ • 200 كال</small>
-<div class="controls">
-<span id="q15">0</span>
-<div>
-<button onclick="add('كوكيز بودينق',10.5,200,'q15')">+</button>
-<button onclick="remove('كوكيز بودينق',10.5,200,'q15')">−</button>
-</div>
+<h3>🔥 عرض</h3>
+<small>قهوة + أي حلى</small>
+<div class="options">
+<button onclick="add('عرض قهوة + حلى',21)">21 ﷼</button>
 </div>
 </div>
 
@@ -275,42 +154,32 @@ border-radius:8px
 
 <script>
 let cart=[];
-function add(n,p,c,id){
-let i=cart.find(x=>x.name===n);
-if(i){i.qty++}else{cart.push({name:n,price:p,cal:c,qty:1})}
-document.getElementById(id).innerText++;
-render()
-}
-function remove(n,p,c,id){
-let i=cart.find(x=>x.name===n);
-if(i&&i.qty>0){
-i.qty--;
-document.getElementById(id).innerText--;
-if(i.qty===0){cart=cart.filter(x=>x.name!==n)}
-}
+function add(name,price){
+let i=cart.find(x=>x.name===name);
+if(i){i.qty++}else{cart.push({name,price,qty:1})}
 render()
 }
 function render(){
-let t='',sum=0,cal=0;
+let t='',sum=0;
 cart.forEach(i=>{
 let s=i.qty*i.price;
-sum+=s;cal+=i.qty*i.cal;
-t+=`${i.name} × ${i.qty} = ${s.toFixed(2)} ﷼ (${i.cal*i.qty} كال)\n`;
+sum+=s;
+t+=`${i.name} × ${i.qty} = ${s.toFixed(2)} ﷼\n`;
 });
 document.getElementById('cartText').innerText=
-cart.length?t+`\nالمجموع: ${sum.toFixed(2)} ﷼\nالسعرات: ${cal} كال`:'🛒 السلة فارغة';
+cart.length?t+`\nالمجموع: ${sum.toFixed(2)} ﷼`:'🛒 السلة فارغة';
 }
 function checkout(){
 if(!cart.length)return;
 let m='🚗 طلب توصيل للسيارة\n----------------\n';
-let sum=0,cal=0;
+let sum=0;
 cart.forEach(i=>{
 let s=i.qty*i.price;
-sum+=s;cal+=i.qty*i.cal;
+sum+=s;
 m+=`${i.name} × ${i.qty} = ${s.toFixed(2)} ﷼\n`;
 });
-m+=`----------------\nالمجموع: ${sum.toFixed(2)} ﷼\nالسعرات: ${cal} كال`;
-window.open('https://wa.me/966XXXXXXXXX?text='+encodeURIComponent(m));
+m+=`----------------\nالمجموع: ${sum.toFixed(2)} ﷼`;
+window.open('https://wa.me/966532212529?text='+encodeURIComponent(m));
 }
 </script>
 
