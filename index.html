@@ -1,109 +1,318 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>NMAT Cafe | Menu</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont;
-      background:#f6f1df;
-      color:#111;
-      text-align:center;
-    }
-    header{
-      padding:30px 20px;
-    }
-    h1{
-      margin:0;
-      font-size:32px;
-      letter-spacing:1px;
-    }
-    p{
-      margin:10px 0 0;
-      font-size:16px;
-      color:#444;
-    }
-    .menu{
-      max-width:400px;
-      margin:30px auto;
-      background:#fff;
-      border-radius:14px;
-      padding:20px;
-      box-shadow:0 10px 30px rgba(0,0,0,.08);
-    }
-    .item{
-      display:flex;
-      justify-content:space-between;
-      padding:12px 0;
-      border-bottom:1px solid #eee;
-      font-size:16px;
-    }
-    .item:last-child{
-      border-bottom:none;
-    }
-    .price{
-      font-weight:bold;
-    }
-    .btn{
-      display:block;
-      margin:30px auto;
-      width:80%;
-      max-width:300px;
-      padding:15px;
-      background:#111;
-      color:#fff;
-      text-decoration:none;
-      border-radius:50px;
-      font-size:18px;
-    }
-    footer{
-      margin:30px 0;
-      font-size:13px;
-      color:#666;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NMAT Cafe - Menu</title>
+
+<style>
+body{
+margin:0;
+font-family:system-ui,-apple-system,BlinkMacSystemFont;
+background:#f6f1df;
+color:#111;
+padding-bottom:170px
+}
+header{
+text-align:center;
+padding:30px 20px
+}
+h1{margin:0;font-size:32px}
+section{
+max-width:420px;
+margin:auto
+}
+.item{
+background:#fff;
+margin:12px;
+padding:14px;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,.05)
+}
+.item h3{margin:0 0 5px}
+.item small{color:#666}
+.controls{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-top:10px
+}
+.controls button{
+width:32px;
+height:32px;
+border:none;
+background:#111;
+color:#fff;
+border-radius:50%;
+font-size:18px
+}
+.cart{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+background:#111;
+color:#fff;
+padding:15px
+}
+.cart pre{
+margin:0;
+white-space:pre-wrap;
+font-size:14px
+}
+.checkout{
+margin-top:10px;
+width:100%;
+padding:12px;
+border:none;
+background:#25D366;
+color:#fff;
+font-size:18px;
+border-radius:8px
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <h1>NMAT cafe</h1>
-  <p>نهتم بتفاصيل طلبك لنقدّم لك طعمًا يُحب</p>
-  <p>📍 تبوك – 24 ساعة</p>
+<h1>NMAT cafe</h1>
+<p>📍 تبوك – توصيل للسيارة – 24 ساعة</p>
 </header>
 
-<div class="menu">
-  <h3>🍰 الحلويات</h3>
+<section>
 
-  <div class="item">
-    <span>كوكيز</span>
-    <span class="price">5.50﷼</span>
-  </div>
+<h2>☕ المشروبات</h2>
 
-  <div class="item">
-    <span>كوكيز بودينق</span>
-    <span class="price">10.50﷼</span>
-  </div>
-
-  <div class="item">
-    <span>دولسي بيكان</span>
-    <span class="price">17.50﷼</span>
-  </div>
-
-  <div class="item">
-    <span>ليموبيري كرامبل</span>
-    <span class="price">17.50﷼</span>
-  </div>
+<div class="item">
+<h3>قهوة اليوم</h3>
+<small>8.50 ﷼ • 3 كال</small>
+<div class="controls">
+<span id="q1">0</span>
+<div>
+<button onclick="add('قهوة اليوم',8.5,3,'q1')">+</button>
+<button onclick="remove('قهوة اليوم',8.5,3,'q1')">−</button>
+</div>
+</div>
 </div>
 
-<a class="btn" href="https://wa.me/966XXXXXXXXX" target="_blank">
-اطلب عبر واتساب
-</a>
+<div class="item">
+<h3>V60</h3>
+<small>6.50 ﷼ • 3 كال</small>
+<div class="controls">
+<span id="q2">0</span>
+<div>
+<button onclick="add('V60',6.5,3,'q2')">+</button>
+<button onclick="remove('V60',6.5,3,'q2')">−</button>
+</div>
+</div>
+</div>
 
-<footer>
-  © NMAT Cafe
-</footer>
+<div class="item">
+<h3>كرددية</h3>
+<small>9.50 ﷼ • 4 كال</small>
+<div class="controls">
+<span id="q3">0</span>
+<div>
+<button onclick="add('كرددية',9.5,4,'q3')">+</button>
+<button onclick="remove('كرددية',9.5,4,'q3')">−</button>
+</div>
+</div>
+</div>
+
+<div class="item">
+<h3>ماتشا</h3>
+<small>13.50 ﷼ • 70 كال</small>
+<div class="controls">
+<span id="q4">0</span>
+<div>
+<button onclick="add('ماتشا',13.5,70,'q4')">+</button>
+<button onclick="remove('ماتشا',13.5,70,'q4')">−</button>
+</div>
+</div>
+</div>
+
+<div class="item">
+<h3>ماتشا لوز</h3>
+<small>13.50 ﷼ • 85 كال</small>
+<div class="controls">
+<span id="q5">0</span>
+<div>
+<button onclick="add('ماتشا لوز',13.5,85,'q5')">+</button>
+<button onclick="remove('ماتشا لوز',13.5,85,'q5')">−</button>
+</div>
+</div>
+</div>
+
+<div class="item">
+<h3>ماتشا فراولة</h3>
+<small>13.50 ﷼ • 75 كال</small>
+<div class="controls">
+<span id="q6">0</span>
+<div>
+<button onclick="add('ماتشا فراولة',13.5,75,'q6')">+</button>
+<button onclick="remove('ماتشا فراولة',13.5,75,'q6')">−</button>
+</div>
+</div>
+</div>
+
+<div class="item">
+<h3>هيتو نمت</h3>
+<small>10.50 ﷼ • 250 كال</small>
+<div class="controls">
+<span id="q7">0</span>
+<div>
+<button onclick="add('هيتو نمت',10.5,250,'q7')">+</button>
+<button onclick="remove('هيتو نمت',10.5,250,'q7')">−</button>
+</div>
+</div>
+</div>
+
+<div class="item">
+<h3>ماء</h3>
+<small>1 ﷼ • 0 كال</small>
+<div class="controls">
+<span id="q8">0</span>
+<div>
+<button onclick="add('ماء',1,0,'q8')">+</button>
+<button onclick="remove('ماء',1,0,'q8')">−</button>
+</div>
+</div>
+</div>
+
+<h2>🍰 الحلويات</h2>
+
+<div class="item">
+<h3>ترافل مانجو</h3>
+<small>14.50 ﷼ • 280 كال</small>
+<div class="controls">
+<span id="q9">0</span>
+<div>
+<button onclick="add('ترافل مانجو',14.5,280,'q9')">+</button>
+<button onclick="remove('ترافل مانجو',14.5,280,'q9')">−</button>
+</div>
+</div>
+</div>
+
+<div class="item">
+<h3>كيكة نمت</h3>
+<small>19.50 ﷼ • 335 كال</small>
+<div class="controls">
+<span id="q10">0</span>
+<div>
+<button onclick="add('كيكة نمت',19.5,335,'q10')">+</button>
+<button onclick="remove('كيكة نمت',19.5,335,'q10')">−</button>
+</div>
+</div>
+</div>
+
+<div class="item">
+<h3>كيكة توت بري</h3>
+<small>14.50 ﷼ • 290 كال</small>
+<div class="controls">
+<span id="q11">0</span>
+<div>
+<button onclick="add('كيكة توت بري',14.5,290,'q11')">+</button>
+<button onclick="remove('كيكة توت بري',14.5,290,'q11')">−</button>
+</div>
+</div>
+</div>
+
+<div class="item">
+<h3>كيكة كوكنت توت</h3>
+<small>14.50 ﷼ • 300 كال</small>
+<div class="controls">
+<span id="q12">0</span>
+<div>
+<button onclick="add('كيكة كوكنت توت',14.5,300,'q12')">+</button>
+<button onclick="remove('كيكة كوكنت توت',14.5,300,'q12')">−</button>
+</div>
+</div>
+</div>
+
+<div class="item">
+<h3>تراميسو</h3>
+<small>11.50 ﷼ • 330 كال</small>
+<div class="controls">
+<span id="q13">0</span>
+<div>
+<button onclick="add('تراميسو',11.5,330,'q13')">+</button>
+<button onclick="remove('تراميسو',11.5,330,'q13')">−</button>
+</div>
+</div>
+</div>
+
+<div class="item">
+<h3>كوكيز</h3>
+<small>5.50 ﷼ • 150 كال</small>
+<div class="controls">
+<span id="q14">0</span>
+<div>
+<button onclick="add('كوكيز',5.5,150,'q14')">+</button>
+<button onclick="remove('كوكيز',5.5,150,'q14')">−</button>
+</div>
+</div>
+</div>
+
+<div class="item">
+<h3>كوكيز بودينق</h3>
+<small>10.50 ﷼ • 200 كال</small>
+<div class="controls">
+<span id="q15">0</span>
+<div>
+<button onclick="add('كوكيز بودينق',10.5,200,'q15')">+</button>
+<button onclick="remove('كوكيز بودينق',10.5,200,'q15')">−</button>
+</div>
+</div>
+</div>
+
+</section>
+
+<div class="cart">
+<pre id="cartText">🛒 السلة فارغة</pre>
+<button class="checkout" onclick="checkout()">إتمام الطلب</button>
+</div>
+
+<script>
+let cart=[];
+function add(n,p,c,id){
+let i=cart.find(x=>x.name===n);
+if(i){i.qty++}else{cart.push({name:n,price:p,cal:c,qty:1})}
+document.getElementById(id).innerText++;
+render()
+}
+function remove(n,p,c,id){
+let i=cart.find(x=>x.name===n);
+if(i&&i.qty>0){
+i.qty--;
+document.getElementById(id).innerText--;
+if(i.qty===0){cart=cart.filter(x=>x.name!==n)}
+}
+render()
+}
+function render(){
+let t='',sum=0,cal=0;
+cart.forEach(i=>{
+let s=i.qty*i.price;
+sum+=s;cal+=i.qty*i.cal;
+t+=`${i.name} × ${i.qty} = ${s.toFixed(2)} ﷼ (${i.cal*i.qty} كال)\n`;
+});
+document.getElementById('cartText').innerText=
+cart.length?t+`\nالمجموع: ${sum.toFixed(2)} ﷼\nالسعرات: ${cal} كال`:'🛒 السلة فارغة';
+}
+function checkout(){
+if(!cart.length)return;
+let m='🚗 طلب توصيل للسيارة\n----------------\n';
+let sum=0,cal=0;
+cart.forEach(i=>{
+let s=i.qty*i.price;
+sum+=s;cal+=i.qty*i.cal;
+m+=`${i.name} × ${i.qty} = ${s.toFixed(2)} ﷼\n`;
+});
+m+=`----------------\nالمجموع: ${sum.toFixed(2)} ﷼\nالسعرات: ${cal} كال`;
+window.open('https://wa.me/966XXXXXXXXX?text='+encodeURIComponent(m));
+}
+</script>
 
 </body>
 </html>
