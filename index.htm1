@@ -1,61 +1,109 @@
 <!DOCTYPE html>
-‏<html lang="ar">
-‏<head>
-‏<meta charset="UTF-8">
-‏<meta name="viewport" content="width=device-width, initial-scale=1.0">
-‏<title>NMAT cafe – Menu</title>
-‏<style>
-‏body {
-‏  font-family: Arial, sans-serif;
-‏  background: #f7f2dc;
-‏  color: #222;
-‏  margin: 0;
-‏  padding: 20px;
-}
-‏.container {
-‏  max-width: 600px;
-‏  margin: auto;
-}
-‏h1 {
-‏  text-align: center;
-}
-‏.item {
-‏  display: flex;
-‏  justify-content: space-between;
-‏  border-bottom: 1px dashed #ccc;
-‏  padding: 10px 0;
-}
-‏.footer {
-‏  text-align: center;
-‏  margin-top: 30px;
-}
-‏.whatsapp {
-‏  display: inline-block;
-‏  margin-top: 15px;
-‏  padding: 12px 20px;
-‏  background: #25D366;
-‏  color: #fff;
-‏  text-decoration: none;
-‏  border-radius: 25px;
-}
-‏</style>
-‏</head>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>NMAT Cafe | Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont;
+      background:#f6f1df;
+      color:#111;
+      text-align:center;
+    }
+    header{
+      padding:30px 20px;
+    }
+    h1{
+      margin:0;
+      font-size:32px;
+      letter-spacing:1px;
+    }
+    p{
+      margin:10px 0 0;
+      font-size:16px;
+      color:#444;
+    }
+    .menu{
+      max-width:400px;
+      margin:30px auto;
+      background:#fff;
+      border-radius:14px;
+      padding:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+    .item{
+      display:flex;
+      justify-content:space-between;
+      padding:12px 0;
+      border-bottom:1px solid #eee;
+      font-size:16px;
+    }
+    .item:last-child{
+      border-bottom:none;
+    }
+    .price{
+      font-weight:bold;
+    }
+    .btn{
+      display:block;
+      margin:30px auto;
+      width:80%;
+      max-width:300px;
+      padding:15px;
+      background:#111;
+      color:#fff;
+      text-decoration:none;
+      border-radius:50px;
+      font-size:18px;
+    }
+    footer{
+      margin:30px 0;
+      font-size:13px;
+      color:#666;
+    }
+  </style>
+</head>
+<body>
 
-‏<body>
-‏<div class="container">
-‏  <h1>🍰 الحلويات</h1>
+<header>
+  <h1>NMAT cafe</h1>
+  <p>نهتم بتفاصيل طلبك لنقدّم لك طعمًا يُحب</p>
+  <p>📍 تبوك – 24 ساعة</p>
+</header>
 
-‏  <div class="item"><span>كوكيز</span><span>5.50 ﷼</span></div>
-‏  <div class="item"><span>كوكيز بودينق</span><span>10.50 ﷼</span></div>
-‏  <div class="item"><span>دولسي بيكان</span><span>17.50 ﷼</span></div>
-‏  <div class="item"><span>ليموبيري كرامبل</span><span>17.50 ﷼</span></div>
+<div class="menu">
+  <h3>🍰 الحلويات</h3>
 
-‏  <div class="footer">
-‏    <p>⏰ أوقات العمل: 24 ساعة</p>
-‏    <a class="whatsapp" href="https://wa.me/966532212529" target="_blank">
-      اطلب عبر واتساب
-‏    </a>
-‏  </div>
-‏</div>
-‏</body>
-‏</html>
+  <div class="item">
+    <span>كوكيز</span>
+    <span class="price">5.50﷼</span>
+  </div>
+
+  <div class="item">
+    <span>كوكيز بودينق</span>
+    <span class="price">10.50﷼</span>
+  </div>
+
+  <div class="item">
+    <span>دولسي بيكان</span>
+    <span class="price">17.50﷼</span>
+  </div>
+
+  <div class="item">
+    <span>ليموبيري كرامبل</span>
+    <span class="price">17.50﷼</span>
+  </div>
+</div>
+
+<a class="btn" href="https://wa.me/966XXXXXXXXX" target="_blank">
+اطلب عبر واتساب
+</a>
+
+<footer>
+  © NMAT Cafe
+</footer>
+
+</body>
+</html>
