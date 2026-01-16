@@ -11,16 +11,36 @@ margin:0;
 font-family:system-ui,-apple-system,BlinkMacSystemFont;
 background:#f6f1df;
 color:#111;
-padding-bottom:220px
+padding-bottom:300px
 }
-header{
-text-align:center;
-padding:25px
+header{text-align:center;padding:20px}
+
+/* Tabs */
+.tabs{
+display:flex;
+justify-content:space-around;
+background:#111;
+padding:10px;
+position:sticky;
+top:0;
+z-index:10
 }
-section{
-max-width:420px;
-margin:auto
+.tabs button{
+border:none;
+padding:8px 16px;
+border-radius:20px;
+background:#fff;
+font-size:14px
 }
+.tabs button.active{
+background:#25D366;
+color:#fff
+}
+
+/* Sections */
+section{max-width:420px;margin:auto;display:none}
+section.active{display:block}
+
 .item{
 background:#fff;
 margin:12px;
@@ -39,6 +59,8 @@ background:#111;
 color:#fff;
 font-size:14px
 }
+
+/* Cart */
 .cart{
 position:fixed;
 bottom:0;
@@ -51,7 +73,6 @@ padding:15px
 .cart-item{
 display:flex;
 justify-content:space-between;
-align-items:center;
 margin-bottom:6px;
 font-size:14px
 }
@@ -61,13 +82,9 @@ padding:2px 6px;
 border:none;
 border-radius:4px;
 background:#fff;
-color:#111;
 font-size:12px
 }
-.cart-controls .remove{
-background:#c0392b;
-color:#fff
-}
+.cart-controls .remove{background:#c0392b;color:#fff}
 .checkout{
 margin-top:10px;
 width:100%;
@@ -78,120 +95,122 @@ color:#fff;
 font-size:18px;
 border-radius:8px
 }
+.cart input[type="text"]{
+width:100%;
+padding:8px;
+border:none;
+border-radius:6px;
+margin-top:6px
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>NMAT cafe</h1>
+<h1>NMAT Cafe</h1>
 <p>📍 تبوك – توصيل للسيارة – 24 ساعة</p>
 <p>📞 0532212529</p>
 </header>
 
-<section>
+<div class="tabs">
+<button class="active" onclick="showTab('drinks',this)">☕ مشروبات</button>
+<button onclick="showTab('desserts',this)">🍪 حلويات</button>
+</div>
 
+<!-- المشروبات -->
+<section id="drinks" class="active">
 <h2>☕ المشروبات</h2>
 
 <div class="item">
 <h3>قهوة اليوم</h3>
-<small>6.50 ﷼ • Hot / Iced</small>
+<small>6.50 ﷼</small>
 <div class="options">
-<button onclick="add('قهوة اليوم (حار)',6.5)">حار</button>
-<button onclick="add('قهوة اليوم (بارد)',6.5)">بارد</button>
+<button onclick="add('مشروبات','قهوة اليوم (حار)',6.5)">حار</button>
+<button onclick="add('مشروبات','قهوة اليوم (بارد)',6.5)">بارد</button>
 </div>
 </div>
 
 <div class="item">
 <h3>V60 إثيوبي</h3>
-<small>9.50 ﷼ • Hot / Iced</small>
+<small>9.50 ﷼</small>
 <div class="options">
-<button onclick="add('V60 إثيوبي (حار)',9.5)">حار</button>
-<button onclick="add('V60 إثيوبي (بارد)',9.5)">بارد</button>
+<button onclick="add('مشروبات','V60 إثيوبي (حار)',9.5)">حار</button>
+<button onclick="add('مشروبات','V60 إثيوبي (بارد)',9.5)">بارد</button>
 </div>
 </div>
 
 <div class="item">
 <h3>ماتشا</h3>
-<small>اختر النكهة والحجم</small>
 <div class="options">
-<button onclick="add('ماتشا فراولة (صغير)',13.5)">فراولة صغير – 13.50</button>
-<button onclick="add('ماتشا فراولة (كبير)',19.5)">فراولة كبير – 19.50</button>
-
-<button onclick="add('ماتشا لاتيه (صغير)',13.5)">لاتيه صغير – 13.50</button>
-<button onclick="add('ماتشا لاتيه (كبير)',19.5)">لاتيه كبير – 19.50</button>
-
-<button onclick="add('ماتشا فانيلا (صغير)',13.5)">فانيلا صغير – 13.50</button>
-<button onclick="add('ماتشا فانيلا (كبير)',19.5)">فانيلا كبير – 19.50</button>
+<button onclick="add('مشروبات','ماتشا فراولة صغير',13.5)">فراولة صغير</button>
+<button onclick="add('مشروبات','ماتشا فراولة كبير',19.5)">فراولة كبير</button>
+<button onclick="add('مشروبات','ماتشا لاتيه صغير',13.5)">لاتيه صغير</button>
+<button onclick="add('مشروبات','ماتشا لاتيه كبير',19.5)">لاتيه كبير</button>
+<button onclick="add('مشروبات','ماتشا فانيلا صغير',13.5)">فانيلا صغير</button>
+<button onclick="add('مشروبات','ماتشا فانيلا كبير',19.5)">فانيلا كبير</button>
 </div>
 </div>
 
-<h2>🍰 الحلويات</h2>
+<div class="item">
+<h3>هوت شوكلت</h3>
+<small>8.50 ﷼</small>
+<div class="options">
+<button onclick="add('مشروبات','هوت شوكلت',8.5)">إضافة</button>
+</div>
+</div>
+</section>
+
+<!-- الحلويات -->
+<section id="desserts">
+<h2>🍪 الحلويات</h2>
 
 <div class="item">
 <h3>كوكيز شوكولاتة</h3>
 <small>5.50 ﷼</small>
 <div class="options">
-<button onclick="add('كوكيز شوكولاتة',5.5)">إضافة</button>
+<button onclick="add('حلويات','كوكيز شوكولاتة',5.5)">إضافة</button>
 </div>
 </div>
-
-<div class="item">
-<h3>دولسي بيكان</h3>
-<small>17.50 ﷼</small>
-<div class="options">
-<button onclick="add('دولسي بيكان',17.5)">إضافة</button>
-</div>
-</div>
-
-<div class="item">
-<h3>ليموبيري</h3>
-<small>17.50 ﷼</small>
-<div class="options">
-<button onclick="add('ليموبيري',17.5)">إضافة</button>
-</div>
-</div>
-
-<div class="item">
-<h3>🔥 عرض</h3>
-<small>قهوة + أي حلى</small>
-<div class="options">
-<button onclick="add('عرض قهوة + حلى',21)">21 ﷼</button>
-</div>
-</div>
-
 </section>
 
+<!-- السلة -->
 <div class="cart">
 <div id="cartText">🛒 السلة فارغة</div>
+
+<div style="margin:10px 0">
+<label><input type="radio" name="type" value="استلام" checked onclick="togglePlate(false)"> استلام من الكاونتر</label><br>
+<label><input type="radio" name="type" value="توصيل" onclick="togglePlate(true)"> توصيل للسيارة</label>
+</div>
+
+<div id="plateBox" style="display:none">
+<input type="text" id="plate" placeholder="رقم لوحة السيارة (اختياري)">
+</div>
+
 <button class="checkout" onclick="checkout()">إتمام الطلب</button>
 </div>
 
 <script>
 let cart=[];
 
-function add(name,price){
+function add(cat,name,price){
 let i=cart.find(x=>x.name===name);
-if(i){i.qty++}else{cart.push({name,price,qty:1})}
-render()
+i ? i.qty++ : cart.push({cat,name,price,qty:1});
+render();
 }
 
 function changeQty(name,delta){
 let i=cart.find(x=>x.name===name);
 if(!i)return;
 i.qty+=delta;
-if(i.qty<=0){
-cart=cart.filter(x=>x.name!==name)
-}
-render()
+if(i.qty<=0) cart=cart.filter(x=>x.name!==name);
+render();
 }
 
 function render(){
-let sum=0;
-let html='';
+let sum=0,html='';
 cart.forEach(i=>{
-let s=i.qty*i.price;
-sum+=s;
+sum+=i.qty*i.price;
 html+=`
 <div class="cart-item">
 <span>${i.name} × ${i.qty}</span>
@@ -203,30 +222,52 @@ html+=`
 </div>`;
 });
 document.getElementById('cartText').innerHTML=
-cart.length
-?html+`<hr><strong>المجموع: ${sum.toFixed(2)} ﷼</strong>`
-:'🛒 السلة فارغة';
+cart.length ? html+`<hr><strong>الإجمالي: ${sum.toFixed(2)} ﷼</strong>` : '🛒 السلة فارغة';
 }
 
 function checkout(){
 if(!cart.length)return;
-let msg=`🚗 طلب توصيل للسيارة
-————————————
-الطلبات:
-`;
-let sum=0;
-cart.forEach(i=>{
-let s=i.qty*i.price;
-sum+=s;
-msg+=`• ${i.name} × ${i.qty} = ${s.toFixed(2)} ﷼\n`;
-});
-msg+=`————————————
-الإجمالي: ${sum.toFixed(2)} ﷼
-يرجى تجهيز الطلب 🚀`;
 
-window.open(
-'https://wa.me/966597312727?text='+encodeURIComponent(msg)
-);
+let type=document.querySelector('input[name="type"]:checked').value;
+let plate=document.getElementById('plate').value;
+
+let msg=`🧾 طلب جديد – NMAT Cafe
+━━━━━━━━━━━━━━
+طريقة الطلب: ${type}\n`;
+
+if(type==="توصيل" && plate){
+msg+=`🚗 لوحة السيارة: ${plate}\n`;
+}
+
+let groups={};
+cart.forEach(i=>{
+groups[i.cat]=groups[i.cat]||[];
+groups[i.cat].push(i);
+});
+
+for(let g in groups){
+msg+=`\n📌 ${g}\n`;
+groups[g].forEach(i=>{
+msg+=`• ${i.name} × ${i.qty} = ${(i.qty*i.price).toFixed(2)} ﷼\n`;
+});
+}
+
+let total=cart.reduce((s,i)=>s+i.qty*i.price,0);
+msg+=`━━━━━━━━━━━━━━
+💰 الإجمالي: ${total.toFixed(2)} ﷼
+☕ يرجى تجهيز الطلب`;
+
+window.open('https://wa.me/966597312727?text='+encodeURIComponent(msg));
+}
+
+function showTab(id,btn){
+document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');
+}
+function togglePlate(show){
+document.getElementById('plateBox').style.display=show?'block':'none';
 }
 </script>
 
